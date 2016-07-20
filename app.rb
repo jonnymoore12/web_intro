@@ -7,6 +7,12 @@ set :session_secret, 'super secret'
 #end
 
 get '/cat' do
-  @name = ["Amigo", "Oscar", "Viking"].sample
+  @name = ['Oscar', 'Maximus', 'Zeus'].sample
+  erb(:index)
+end
+
+get '/named-cat' do
+  p params
+  @name = params[:name]
   erb(:index)
 end
